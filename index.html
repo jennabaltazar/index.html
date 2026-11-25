@@ -91,69 +91,67 @@
       text-align: center;
       color: #0f172a;
     }
-   /* 3D rotating project carousel */
+    /* Click-controlled 3D project carousel */
     .grid {
       position: relative;
       display: block;
       height: 400px;
       perspective: 1200px;
       transform-style: preserve-3d;
-      animation: carousel-spin 18s linear infinite;
+      transform: rotateY(var(--rotation, 0deg));
+      transition: transform 0.6s ease;
     }
-    .grid:hover {
-  animation-play-state: paused;
-}
-
-.grid > .card {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: min(300px, calc(100vw - 48px));
-  backface-visibility: hidden;
-  transform-style: preserve-3d;
-  transition: box-shadow 0.2s;
-}
-
-.grid > .card:nth-child(1) {
-  transform: translateX(-50%) rotateY(0deg) translateZ(300px);
-}
-
-.grid > .card:nth-child(2) {
-  transform: translateX(-50%) rotateY(120deg) translateZ(300px);
-}
-
-.grid > .card:nth-child(3) {
-  transform: translateX(-50%) rotateY(240deg) translateZ(300px);
-}
-
-.grid > .card:hover {
-  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.18);
-}
-
-@keyframes carousel-spin {
-  from {
-    transform: rotateY(0deg);
-  }
-  to {
-    transform: rotateY(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .grid {
-    animation: none;
-  }
-}
+    .grid > .card {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: min(300px, calc(100vw - 48px));
+      backface-visibility: hidden;
+      transform-style: preserve-3d;
+      transition: box-shadow 0.2s;
+    }
+    .grid > .card:nth-child(1) {
+      transform: translateX(-50%) rotateY(0deg) translateZ(300px);
+    }
+    .grid > .card:nth-child(2) {
+      transform: translateX(-50%) rotateY(120deg) translateZ(300px);
+    }
+    .grid > .card:nth-child(3) {
+      transform: translateX(-50%) rotateY(240deg) translateZ(300px);
+    }
+    .grid > .card:hover {
+      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.18);
+    }
+    .carousel-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-top: 8px;
+    }
+    .carousel-button {
+      width: 48px;
+      height: 48px;
+      border: 0;
+      border-radius: 50%;
+      background: #2563eb;
+      color: #ffffff;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .carousel-button:hover {
+      background: #1d4ed8;
+    }
+    .carousel-button:focus-visible {
+      outline: 3px solid #0f172a;
+      outline-offset: 3px;
+    }
     .card {
       background: #ffffff;
       border-radius: 12px;
       overflow: hidden;
       border: 1px solid #e2e8f0;
       transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
     }
     .card-thumb {
       height: 160px;
@@ -212,6 +210,11 @@
       font-size: 0.9rem;
       margin-top: 40px;
     }
+    @media (prefers-reduced-motion: reduce) {
+      .grid {
+        transition: none;
+      }
+    }
   </style>
 </head>
 <body>
@@ -235,7 +238,7 @@
 
   <section id="work" class="section">
     <h2 class="section-title">Selected Projects</h2>
-    <div class="grid">
+    <div class="grid" id="project-carousel" aria-label="Selected projects">
       <div class="card">
         <div class="card-thumb">Project Preview 1</div>
         <div class="card-body">
@@ -262,6 +265,10 @@
           <a href="#" class="card-link">View Project →</a>
         </div>
       </div>
+    </div>
+    <div class="carousel-controls" aria-label="Carousel controls">
+      <button class="carousel-button" id="previous-project" type="button" aria-label="Previous project">&#8592;</button>
+      <button class="carousel-button" id="next-project" type="button" aria-label="Next project">&#8594;</button>
     </div>
   </section>
 
@@ -291,5 +298,20 @@
     © 2026 Jenna Baltazar. Built and hosted on GitHub Pages.
   </footer>
 
+  <script>
+    const carousel = document.getElementById("project-carousel");
+    let rotation = 0;
+
+    document.getElementById("previous-project").addEventListener("click", () => {
+      rotation -= 120;
+      carousel.style.setProperty("--rotation", `${rotation}deg`);
+    });
+
+    document.getElementById("next-project").addEventListener("click", () => {
+      rotation += 120;
+      carousel.style.setProperty("--rotation", `${rotation}deg`);
+    });
+  </script>
 </body>
 </html>
+
