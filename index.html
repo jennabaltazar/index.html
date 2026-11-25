@@ -91,12 +91,59 @@
       text-align: center;
       color: #0f172a;
     }
-    /* 3-Column Project Grid */
+   /* 3D rotating project carousel */
     .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
+      position: relative;
+      display: block;
+      height: 400px;
+      perspective: 1200px;
+      transform-style: preserve-3d;
+      animation: carousel-spin 18s linear infinite;
     }
+    grid:hover {
+  animation-play-state: paused;
+}
+
+.grid > .card {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(300px, calc(100vw - 48px));
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: box-shadow 0.2s;
+}
+
+.grid > .card:nth-child(1) {
+  transform: translateX(-50%) rotateY(0deg) translateZ(300px);
+}
+
+.grid > .card:nth-child(2) {
+  transform: translateX(-50%) rotateY(120deg) translateZ(300px);
+}
+
+.grid > .card:nth-child(3) {
+  transform: translateX(-50%) rotateY(240deg) translateZ(300px);
+}
+
+.grid > .card:hover {
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.18);
+}
+
+@keyframes carousel-spin {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grid {
+    animation: none;
+  }
+}
     .card {
       background: #ffffff;
       border-radius: 12px;
