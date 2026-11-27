@@ -3,28 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Web Design Portfolio</title>
+  <title>Jenna Baltazar — Web Design Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- Top Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">Jenna Baltazar</a>
+      <ul class="nav-links">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <!-- Hero Section -->
   <header class="hero">
-    <h1>Hi, I'm Jenna</h1>
-    <p>Aspiring Web Designer building clean, responsive websites with HTML & CSS.</p>
+    <h1>Hi, I'm Jen!</h1>
+    <p>A Career Shifter and Aspiring Web Designer building clean, responsive websites and landing pages with HTML & CSS.</p>
     <a href="#projects" class="hero-btn">Explore My Projects</a>
   </header>
 
   <!-- 3D Carousel Projects Section -->
   <section id="projects" class="projects-section">
     <h2>Featured Projects</h2>
-    <p class="subtitle">Hover over any card to pause and view the live project</p>
+    <p class="subtitle">Click any card to bring it to the front</p>
 
     <div class="carousel-scene">
       <!-- Change --total to match your exact number of project cards -->
-      <div class="carousel-spinner" style="--total: 5;">
+      <div class="carousel-spinner" id="carousel" style="--total: 5;">
 
-        <div class="project-card" style="--i: 1;">
+        <div class="project-card" style="--i: 0;">
           <img src="images/project1.png" alt="Personal Portfolio Screenshot">
           <div class="card-content">
             <h3>Personal Portfolio</h3>
@@ -36,7 +48,7 @@
           </div>
         </div>
 
-        <div class="project-card" style="--i: 2;">
+        <div class="project-card" style="--i: 1;">
           <img src="images/project2.png" alt="Landing Page Screenshot">
           <div class="card-content">
             <h3>Product Landing Page</h3>
@@ -48,7 +60,7 @@
           </div>
         </div>
 
-        <div class="project-card" style="--i: 3;">
+        <div class="project-card" style="--i: 2;">
           <img src="images/project3.png" alt="CSS Markers Screenshot">
           <div class="card-content">
             <h3>CSS Color Markers</h3>
@@ -60,7 +72,7 @@
           </div>
         </div>
 
-        <div class="project-card" style="--i: 4;">
+        <div class="project-card" style="--i: 3;">
           <img src="images/project4.png" alt="Photo Gallery Screenshot">
           <div class="card-content">
             <h3>Photo Gallery</h3>
@@ -72,7 +84,7 @@
           </div>
         </div>
 
-        <div class="project-card" style="--i: 5;">
+        <div class="project-card" style="--i: 4;">
           <img src="images/project5.png" alt="Survey Form Screenshot">
           <div class="card-content">
             <h3>Registration Form</h3>
@@ -88,9 +100,66 @@
     </div>
   </section>
 
+  <!-- About Me Section -->
+  <section id="about" class="info-section">
+    <div class="info-card">
+      <h2>About Me</h2>
+      <p>
+        I am a web designer focused on creating clean, responsive, and easy-to-navigate websites. 
+        I enjoy turning ideas into simple, well-structured webpages using modern HTML and CSS, and I am continuously building new projects to sharpen my front-end design skills.
+      </p>
+      <div class="skills-list">
+        <span class="skill-badge">HTML5</span>
+        <span class="skill-badge">CSS3</span>
+        <span class="skill-badge">Responsive Design</span>
+        <span class="skill-badge">Landing Pages</span>
+        <span class="skill-badge">Flexbox & 3D CSS</span>
+        <span class="skill-badge">GitHub Pages</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="info-section">
+    <div class="info-card">
+      <h2>Get In Touch</h2>
+      <p>
+        Looking for help building a clean landing page or website, or want to collaborate on a project? Feel free to reach out!
+      </p>
+      <div class="contact-links">
+        <a href="mailto:jennabaltazar24@gmail.com" class="btn primary contact-btn">Email Me</a>
+        <a href="https://github.com" target="_blank" class="btn secondary contact-btn">GitHub Profile</a>
+        <a href="https://linkedin.com" target="_blank" class="btn secondary contact-btn">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
   <footer>
-    <p>Built with HTML & CSS • Hosted on GitHub Pages</p>
+    <p>© 2026 Jenna Baltazar • Built with HTML & CSS • Hosted on GitHub Pages</p>
   </footer>
+
+  <!-- Click-Card-to-Rotate Logic -->
+  <script>
+    const carousel = document.getElementById('carousel');
+    const cards = document.querySelectorAll('.project-card');
+    const totalCards = cards.length;
+    const anglePerCard = 360 / totalCards;
+    let currentAngle = 0;
+
+    cards.forEach((card, index) => {
+      card.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') return;
+
+        const targetAngle = -index * anglePerCard;
+        let diff = (targetAngle - currentAngle) % 360;
+        if (diff > 180) diff -= 360;
+        if (diff < -180) diff += 360;
+
+        currentAngle += diff;
+        carousel.style.transform = `rotateY(${currentAngle}deg)`;
+      });
+    });
+  </script>
 
 </body>
 </html>
