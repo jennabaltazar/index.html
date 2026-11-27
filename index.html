@@ -21,7 +21,6 @@
   <section class="hero">
     <h1>Hi, I'm Jenna Baltazar</h1>
     <p>A collection of my web design projects, practice layouts, and custom websites built with HTML and CSS.</p>
-    <a href="#work" class="btn">View My Work</a>
   </section>
 
   <section id="work" class="section">
@@ -70,6 +69,7 @@
         <span class="skill-tag">Responsive Layouts</span>
         <span class="skill-tag">HTML5</span>
         <span class="skill-tag">CSS3</span>
+        <span class="skill-tag">Canva</span>
       </div>
     </div>
   </section>
@@ -85,21 +85,4 @@
   <footer>
     © 2026 Jenna Baltazar. Built and hosted on GitHub Pages.
   </footer>
-
-  <script>
-    const carousel = document.getElementById("project-carousel");
-    let rotation = 0;
-
-    document.getElementById("previous-project").addEventListener("click", () => {
-      rotation -= 120;
-      carousel.style.setProperty("--rotation", `${rotation}deg`);
-    });
-
-    document.getElementById("next-project").addEventListener("click", () => {
-      rotation += 120;
-      carousel.style.setProperty("--rotation", `${rotation}deg`);
-    });
-  </script>
-</body>
-</html>
 
