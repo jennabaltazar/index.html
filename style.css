@@ -140,11 +140,6 @@ nav a:hover {
 .grid > .card:nth-child(3) {
   transform: translateX(-50%) rotateY(240deg) translateZ(300px);
 }
-
-.grid > .card:hover {
-  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.18);
-}
-
 .carousel-controls {
   display: flex;
   justify-content: center;
