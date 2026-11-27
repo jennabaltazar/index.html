@@ -11,13 +11,14 @@
   <!-- Top Navigation Bar -->
   <nav class="navbar">
     <div class="nav-container">
-      <!-- Top Left: Logo Picture -->
+      <!-- Top Left: Logo & Name -->
       <a href="#" class="brand-logo">
-        <img src="images/logo.png" alt="Jenna Logo">
+        <img src="images/logo.png" alt="JB" onerror="this.style.display='none'">
+        <span class="logo-badge">JB</span>
         <span>Jenna Baltazar</span>
       </a>
 
-      <!-- Top Right: Resume Portfolio & Contact Me -->
+      <!-- Top Right: Resume & Contact -->
       <div class="nav-right">
         <a href="resume.pdf" target="_blank" class="nav-link">Resume Portfolio</a>
         <a href="#contact" class="nav-contact-btn">Contact Me</a>
@@ -34,79 +35,91 @@
   <!-- 3D Click-to-Switch Cards Carousel -->
   <section id="projects" class="projects-section">
     <h2>Featured Projects</h2>
-    
-    <div class="deck-stage" id="cardDeck">
+    <p class="subtitle">Click a side card or active card to switch projects</p>
 
-     <div class="project-card">
-  <img src="images/project1.png" alt="Personal Portfolio Screenshot">
-  <div class="card-content">
-    <h3>Personal Portfolio</h3>
-    <p>Responsive portfolio website hosted live on GitHub Pages.</p>
-    <div class="card-links">
-      <a href="https://github.io" target="_blank" class="btn primary">View Project</a>
-    </div>
-  </div>
-</div>
+    <div class="deck-wrapper">
+      <div class="deck-stage" id="cardDeck">
 
-      <div class="project-card">
-        <img src="images/project2.png" alt="Landing Page Screenshot">
-        <div class="card-content">
-          <h3>Product Landing Page</h3>
-          <p>Modern hero section, call-to-action buttons, and Flexbox layout.</p>
-          <div class="card-links">
-            <a href="https://github.io" target="_blank" class="btn primary">View Project</a>>
+        <div class="project-card">
+          <div class="card-thumb">
+            <img src="images/project1.png" alt="Personal Portfolio" onerror="this.style.display='none'">
           </div>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <img src="images/project3.png" alt="CSS Markers Screenshot">
-        <div class="card-content">
-          <h3>CSS Color Markers</h3>
-          <p>Practice project using linear gradients, shadows, and RGB colors.</p>
-          <div class="card-links">
+          <div class="card-content">
+            <h3>Personal Portfolio</h3>
+            <p>Responsive portfolio website hosted live on GitHub Pages.</p>
             <div class="card-links">
               <a href="https://github.io" target="_blank" class="btn primary">View Project</a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="project-card">
-        <img src="images/project4.png" alt="Photo Gallery Screenshot">
-        <div class="card-content">
-          <h3>Photo Gallery</h3>
-          <p>Responsive Flexbox image grid that adapts to any screen size.</p>
-          <div class="card-links">
-            <a href="https://github.io" target="_blank" class="btn primary">View Project</a>
+        <div class="project-card">
+          <div class="card-thumb">
+            <img src="images/project2.png" alt="Product Landing Page" onerror="this.style.display='none'">
+          </div>
+          <div class="card-content">
+            <h3>Product Landing Page</h3>
+            <p>Modern hero section, call-to-action buttons, and Flexbox layout.</p>
+            <div class="card-links">
+              <a href="#" target="_blank" class="btn primary">View Project</a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="project-card">
-        <img src="images/survey.png" alt="Survey Form Screenshot">
-        <div class="card-content">
-          <h3>Registration Form</h3>
-          <p>Clean, accessible HTML form with custom input styling.</p>
-          <div class="card-links">
-              <a href="https://github.io" target="_blank" class="btn primary">View Project</a>>
+        <div class="project-card">
+          <div class="card-thumb">
+            <img src="images/project3.png" alt="CSS Color Markers" onerror="this.style.display='none'">
+          </div>
+          <div class="card-content">
+            <h3>CSS Color Markers</h3>
+            <p>Practice project using linear gradients, shadows, and RGB colors.</p>
+            <div class="card-links">
+              <a href="#" target="_blank" class="btn primary">View Project</a>
+            </div>
           </div>
         </div>
-      </div>
 
+        <div class="project-card">
+          <div class="card-thumb">
+            <img src="images/project4.png" alt="Photo Gallery" onerror="this.style.display='none'">
+          </div>
+          <div class="card-content">
+            <h3>Photo Gallery</h3>
+            <p>Responsive Flexbox image grid that adapts to any screen size.</p>
+            <div class="card-links">
+              <a href="#" target="_blank" class="btn primary">View Project</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="card-thumb">
+            <img src="images/project5.png" alt="Registration Form" onerror="this.style.display='none'">
+          </div>
+          <div class="card-content">
+            <h3>Registration Form</h3>
+            <p>Clean, accessible HTML form with custom input styling.</p>
+            <div class="card-links">
+              <a href="#" target="_blank" class="btn primary">View Project</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <!-- About Me Section (Under the 3D Cards) -->
+  <!-- About Me Section (Directly Under 3D Cards) -->
   <section id="about" class="about-section">
     <div class="about-card">
       <h2>About Me</h2>
-      
+
       <!-- Highlighted Skills Box -->
       <div class="skills-highlight-box">
         <h3>My Skills</h3>
         <div class="skills-list">
           <span class="skill-badge">HTML5</span>
-          <span class="skill-badge">CSS</span>
+          <span class="skill-badge">CSS3</span>
           <span class="skill-badge">Responsive Design</span>
           <span class="skill-badge">Landing Pages</span>
           <span class="skill-badge">Canva</span>
@@ -124,7 +137,7 @@
       <div class="contact-links">
         <a href="mailto:jennabaltazar24@gmail.com" class="btn primary contact-btn">Email Me</a>
         <a href="https://github.com" target="_blank" class="btn secondary contact-btn">GitHub</a>
-        <a href="www.linkedin.com/in/jenna-andrei-baltazar-ba8b6b211" target="_blank" class="btn secondary contact-btn">LinkedIn</a>
+        <a href="https://linkedin.com" target="_blank" class="btn secondary contact-btn">LinkedIn</a>
       </div>
     </div>
   </section>
@@ -133,38 +146,36 @@
     <p>© 2026 Jenna Baltazar • Built with HTML & CSS • Hosted on GitHub Pages</p>
   </footer>
 
-  <!-- Click-to-Switch 3D Deck Logic (No Spinning) -->
+  <!-- Click-to-Switch 3D Deck Logic -->
   <script>
     const cards = Array.from(document.querySelectorAll('.project-card'));
     let activeIndex = 0;
 
     function updateCards() {
       const total = cards.length;
+      const isMobile = window.innerWidth <= 650;
+      const spacing = isMobile ? 115 : 195;
 
       cards.forEach((card, index) => {
-        // Find relative position from activeIndex (-2, -1, 0, +1, +2)
         let offset = index - activeIndex;
         if (offset > Math.floor(total / 2)) offset -= total;
         if (offset < -Math.floor(total / 2)) offset += total;
 
         if (offset === 0) {
-          // Front center card
-          card.style.transform = 'translateX(0px) translateZ(0px) scale(1)';
+          card.style.transform = 'translateX(-50%) translateZ(0px) scale(1)';
           card.style.opacity = '1';
           card.style.zIndex = '10';
           card.style.filter = 'brightness(1)';
         } else if (offset === 1 || offset === -1) {
-          // Immediate left and right cards
-          const xShift = offset * 190;
-          card.style.transform = `translateX(${xShift}px) translateZ(-120px) scale(0.88)`;
+          const xShift = offset * spacing;
+          card.style.transform = `translateX(calc(-50% + ${xShift}px)) translateZ(-120px) scale(0.88)`;
           card.style.opacity = '0.85';
           card.style.zIndex = '5';
           card.style.filter = 'brightness(0.75)';
         } else {
-          // Back cards tucked smoothly behind
-          const xShift = offset * 140;
-          card.style.transform = `translateX(${xShift}px) translateZ(-240px) scale(0.75)`;
-          card.style.opacity = '0.4';
+          const xShift = offset * (spacing * 0.75);
+          card.style.transform = `translateX(calc(-50% + ${xShift}px)) translateZ(-240px) scale(0.75)`;
+          card.style.opacity = '0.35';
           card.style.zIndex = '1';
           card.style.filter = 'brightness(0.5)';
         }
@@ -173,21 +184,13 @@
 
     cards.forEach((card, index) => {
       card.addEventListener('click', (e) => {
-        // Don't switch card if user clicked Live Demo or Code links
         if (e.target.tagName === 'A') return;
-
-        if (index === activeIndex) {
-          // Clicking the center card advances to the next card
-          activeIndex = (activeIndex + 1) % cards.length;
-        } else {
-          // Clicking a side card brings that card to the front
-          activeIndex = index;
-        }
+        activeIndex = (index === activeIndex) ? (activeIndex + 1) % cards.length : index;
         updateCards();
       });
     });
 
-    // Initialize card positions on page load
+    window.addEventListener('resize', updateCards);
     updateCards();
   </script>
 
