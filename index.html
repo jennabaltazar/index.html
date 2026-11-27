@@ -26,7 +26,7 @@
   <section id="work" class="section">
     <h2 class="section-title">Selected Projects</h2>
     <div class="grid" id="project-carousel" aria-label="Selected projects">
-      <div class="card">
+      <div class="card" tabindex="0" role="button" aria-label="Show next project: My Resume">
         <div class="card-thumb">Project Preview 1</div>
         <div class="card-body">
           <h3>My Resume</h3>
@@ -35,7 +35,7 @@
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" tabindex="0" role="button" aria-label="Show next project: Personal Blog Layout">
         <div class="card-thumb">Project Preview 2</div>
         <div class="card-body">
           <h3>Personal Blog Layout</h3>
@@ -44,7 +44,7 @@
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" tabindex="0" role="button" aria-label="Show next project: Service Business Website">
         <div class="card-thumb">Project Preview 3</div>
         <div class="card-body">
           <h3>Service Business Website</h3>
@@ -52,10 +52,6 @@
           <a href="#" class="card-link">View Project →</a>
         </div>
       </div>
-    </div>
-    <div class="carousel-controls" aria-label="Carousel controls">
-      <button class="carousel-button" id="previous-project" type="button" aria-label="Previous project">&#8592;</button>
-      <button class="carousel-button" id="next-project" type="button" aria-label="Next project">&#8594;</button>
     </div>
   </section>
 
@@ -85,17 +81,32 @@
   <footer>
     © 2026 Jenna Baltazar. Built and hosted on GitHub Pages.
   </footer>
-  
+
   <script>
-  const carousel = document.getElementById("project-carousel");
-  const cards = [...carousel.querySelectorAll(".card")];
-  let selectedIndex = 0;
+    const carousel = document.getElementById("project-carousel");
+    const cards = [...carousel.querySelectorAll(".card")];
+    let selectedIndex = 0;
 
-  cards.forEach((card, index) => {
-    card.addEventListener("click", () => {
-      selectedIndex = index;
-      carousel.style.setProperty("--rotation", `${-index * 120}deg`);
+    function showNextCard() {
+      selectedIndex = (selectedIndex + 1) % cards.length;
+      carousel.style.setProperty("--rotation", `${-selectedIndex * 120}deg`);
+    }
+
+    cards.forEach((card) => {
+      card.addEventListener("click", (event) => {
+        if (event.target.closest(".card-link")) {
+          event.preventDefault();
+        }
+        showNextCard();
+      });
+
+      card.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          showNextCard();
+        }
+      });
     });
-  });
-</script>
-
+  </script>
+</body>
+</html>
