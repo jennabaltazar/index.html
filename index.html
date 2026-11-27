@@ -85,4 +85,17 @@
   <footer>
     © 2026 Jenna Baltazar. Built and hosted on GitHub Pages.
   </footer>
+  
+  <script>
+  const carousel = document.getElementById("project-carousel");
+  const cards = [...carousel.querySelectorAll(".card")];
+  let selectedIndex = 0;
+
+  cards.forEach((card, index) => {
+    card.addEventListener("click", () => {
+      selectedIndex = index;
+      carousel.style.setProperty("--rotation", `${-index * 120}deg`);
+    });
+  });
+</script>
 
