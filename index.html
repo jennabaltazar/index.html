@@ -11,124 +11,128 @@
   <!-- Top Navigation Bar -->
   <nav class="navbar">
     <div class="nav-container">
-      <a href="#" class="logo">Jenna Baltazar</a>
-      <ul class="nav-links">
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <!-- Top Left: Logo Picture -->
+      <a href="#" class="brand-logo">
+        <img src="images/logo.png" alt="Jenna Logo">
+        <span>Jenna Baltazar</span>
+      </a>
+
+      <!-- Top Right: Resume Portfolio & Contact Me -->
+      <div class="nav-right">
+        <a href="resume.pdf" target="_blank" class="nav-link">Resume Portfolio</a>
+        <a href="#contact" class="nav-contact-btn">Contact Me</a>
+      </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
   <header class="hero">
-    <h1>Hi, I'm Jen!</h1>
-    <p>A Career Shifter and Aspiring Web Designer building clean, responsive websites and landing pages with HTML & CSS.</p>
-    <a href="#projects" class="hero-btn">Explore My Projects</a>
+    <h1>Hi, I'm Jenna Baltazar</h1>
+    <p>Aspiring Web Designer building clean, responsive websites and landing pages with HTML & CSS.</p>
   </header>
 
-  <!-- 3D Carousel Projects Section -->
+  <!-- 3D Click-to-Switch Cards Carousel -->
   <section id="projects" class="projects-section">
     <h2>Featured Projects</h2>
-    <p class="subtitle">Click any card to bring it to the front</p>
+    <p class="subtitle">Click a card to switch to the next project</p>
 
-    <div class="carousel-scene">
-      <!-- Change --total to match your exact number of project cards -->
-      <div class="carousel-spinner" id="carousel" style="--total: 5;">
+    <div class="deck-stage" id="cardDeck">
 
-        <div class="project-card" style="--i: 0;">
-          <img src="images/project1.png" alt="Personal Portfolio Screenshot">
-          <div class="card-content">
-            <h3>Personal Portfolio</h3>
-            <p>Responsive portfolio website hosted live on GitHub Pages.</p>
-            <div class="card-links">
-              <a href="https://github.io" target="_blank" class="btn primary">Live Demo</a>
-              <a href="https://github.com" target="_blank" class="btn secondary">Code</a>
-            </div>
+      <div class="project-card">
+        <img src="images/project1.png" alt="Personal Portfolio Screenshot">
+        <div class="card-content">
+          <h3>Personal Portfolio</h3>
+          <p>Responsive portfolio website hosted live on GitHub Pages.</p>
+          <div class="card-links">
+            <a href="https://github.io" target="_blank" class="btn primary">Live Demo</a>
+            <a href="https://github.com" target="_blank" class="btn secondary">Code</a>
           </div>
         </div>
-
-        <div class="project-card" style="--i: 1;">
-          <img src="images/project2.png" alt="Landing Page Screenshot">
-          <div class="card-content">
-            <h3>Product Landing Page</h3>
-            <p>Modern hero section, call-to-action buttons, and Flexbox layout.</p>
-            <div class="card-links">
-              <a href="#" target="_blank" class="btn primary">Live Demo</a>
-              <a href="#" target="_blank" class="btn secondary">Code</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card" style="--i: 2;">
-          <img src="images/project3.png" alt="CSS Markers Screenshot">
-          <div class="card-content">
-            <h3>CSS Color Markers</h3>
-            <p>Practice project using linear gradients, shadows, and RGB colors.</p>
-            <div class="card-links">
-              <a href="#" target="_blank" class="btn primary">Live Demo</a>
-              <a href="#" target="_blank" class="btn secondary">Code</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card" style="--i: 3;">
-          <img src="images/project4.png" alt="Photo Gallery Screenshot">
-          <div class="card-content">
-            <h3>Photo Gallery</h3>
-            <p>Responsive Flexbox image grid that adapts to any screen size.</p>
-            <div class="card-links">
-              <a href="#" target="_blank" class="btn primary">Live Demo</a>
-              <a href="#" target="_blank" class="btn secondary">Code</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card" style="--i: 4;">
-          <img src="images/project5.png" alt="Survey Form Screenshot">
-          <div class="card-content">
-            <h3>Registration Form</h3>
-            <p>Clean, accessible HTML form with custom input styling.</p>
-            <div class="card-links">
-              <a href="#" target="_blank" class="btn primary">Live Demo</a>
-              <a href="#" target="_blank" class="btn secondary">Code</a>
-            </div>
-          </div>
-        </div>
-
       </div>
+
+      <div class="project-card">
+        <img src="images/project2.png" alt="Landing Page Screenshot">
+        <div class="card-content">
+          <h3>Product Landing Page</h3>
+          <p>Modern hero section, call-to-action buttons, and Flexbox layout.</p>
+          <div class="card-links">
+            <a href="#" target="_blank" class="btn primary">Live Demo</a>
+            <a href="#" target="_blank" class="btn secondary">Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="images/project3.png" alt="CSS Markers Screenshot">
+        <div class="card-content">
+          <h3>CSS Color Markers</h3>
+          <p>Practice project using linear gradients, shadows, and RGB colors.</p>
+          <div class="card-links">
+            <a href="#" target="_blank" class="btn primary">Live Demo</a>
+            <a href="#" target="_blank" class="btn secondary">Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="images/project4.png" alt="Photo Gallery Screenshot">
+        <div class="card-content">
+          <h3>Photo Gallery</h3>
+          <p>Responsive Flexbox image grid that adapts to any screen size.</p>
+          <div class="card-links">
+            <a href="#" target="_blank" class="btn primary">Live Demo</a>
+            <a href="#" target="_blank" class="btn secondary">Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="images/project5.png" alt="Survey Form Screenshot">
+        <div class="card-content">
+          <h3>Registration Form</h3>
+          <p>Clean, accessible HTML form with custom input styling.</p>
+          <div class="card-links">
+            <a href="#" target="_blank" class="btn primary">Live Demo</a>
+            <a href="#" target="_blank" class="btn secondary">Code</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- About Me Section -->
-  <section id="about" class="info-section">
-    <div class="info-card">
+  <!-- About Me Section (Under the 3D Cards) -->
+  <section id="about" class="about-section">
+    <div class="about-card">
       <h2>About Me</h2>
       <p>
         I am a web designer focused on creating clean, responsive, and easy-to-navigate websites. 
         I enjoy turning ideas into simple, well-structured webpages using modern HTML and CSS, and I am continuously building new projects to sharpen my front-end design skills.
       </p>
-      <div class="skills-list">
-        <span class="skill-badge">HTML5</span>
-        <span class="skill-badge">CSS3</span>
-        <span class="skill-badge">Responsive Design</span>
-        <span class="skill-badge">Landing Pages</span>
-        <span class="skill-badge">Flexbox & 3D CSS</span>
-        <span class="skill-badge">GitHub Pages</span>
+
+      <!-- Highlighted Skills Box -->
+      <div class="skills-highlight-box">
+        <h3>My Skills</h3>
+        <div class="skills-list">
+          <span class="skill-badge">HTML5</span>
+          <span class="skill-badge">CSS3</span>
+          <span class="skill-badge">Responsive Design</span>
+          <span class="skill-badge">Landing Pages</span>
+          <span class="skill-badge">Flexbox & 3D CSS</span>
+          <span class="skill-badge">GitHub Pages</span>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="info-section">
-    <div class="info-card">
-      <h2>Get In Touch</h2>
-      <p>
-        Looking for help building a clean landing page or website, or want to collaborate on a project? Feel free to reach out!
-      </p>
+  <section id="contact" class="contact-section">
+    <div class="about-card">
+      <h2>Contact Me</h2>
+      <p>Interested in working together or want to see more of my work? Feel free to reach out!</p>
       <div class="contact-links">
         <a href="mailto:jennabaltazar24@gmail.com" class="btn primary contact-btn">Email Me</a>
-        <a href="https://github.com" target="_blank" class="btn secondary contact-btn">GitHub Profile</a>
+        <a href="https://github.com" target="_blank" class="btn secondary contact-btn">GitHub</a>
         <a href="https://linkedin.com" target="_blank" class="btn secondary contact-btn">LinkedIn</a>
       </div>
     </div>
@@ -138,27 +142,62 @@
     <p>© 2026 Jenna Baltazar • Built with HTML & CSS • Hosted on GitHub Pages</p>
   </footer>
 
-  <!-- Click-Card-to-Rotate Logic -->
+  <!-- Click-to-Switch 3D Deck Logic (No Spinning) -->
   <script>
-    const carousel = document.getElementById('carousel');
-    const cards = document.querySelectorAll('.project-card');
-    const totalCards = cards.length;
-    const anglePerCard = 360 / totalCards;
-    let currentAngle = 0;
+    const cards = Array.from(document.querySelectorAll('.project-card'));
+    let activeIndex = 0;
+
+    function updateCards() {
+      const total = cards.length;
+
+      cards.forEach((card, index) => {
+        // Find relative position from activeIndex (-2, -1, 0, +1, +2)
+        let offset = index - activeIndex;
+        if (offset > Math.floor(total / 2)) offset -= total;
+        if (offset < -Math.floor(total / 2)) offset += total;
+
+        if (offset === 0) {
+          // Front center card
+          card.style.transform = 'translateX(0px) translateZ(0px) scale(1)';
+          card.style.opacity = '1';
+          card.style.zIndex = '10';
+          card.style.filter = 'brightness(1)';
+        } else if (offset === 1 || offset === -1) {
+          // Immediate left and right cards
+          const xShift = offset * 190;
+          card.style.transform = `translateX(${xShift}px) translateZ(-120px) scale(0.88)`;
+          card.style.opacity = '0.85';
+          card.style.zIndex = '5';
+          card.style.filter = 'brightness(0.75)';
+        } else {
+          // Back cards tucked smoothly behind
+          const xShift = offset * 140;
+          card.style.transform = `translateX(${xShift}px) translateZ(-240px) scale(0.75)`;
+          card.style.opacity = '0.4';
+          card.style.zIndex = '1';
+          card.style.filter = 'brightness(0.5)';
+        }
+      });
+    }
 
     cards.forEach((card, index) => {
       card.addEventListener('click', (e) => {
+        // Don't switch card if user clicked Live Demo or Code links
         if (e.target.tagName === 'A') return;
 
-        const targetAngle = -index * anglePerCard;
-        let diff = (targetAngle - currentAngle) % 360;
-        if (diff > 180) diff -= 360;
-        if (diff < -180) diff += 360;
-
-        currentAngle += diff;
-        carousel.style.transform = `rotateY(${currentAngle}deg)`;
+        if (index === activeIndex) {
+          // Clicking the center card advances to the next card
+          activeIndex = (activeIndex + 1) % cards.length;
+        } else {
+          // Clicking a side card brings that card to the front
+          activeIndex = index;
+        }
+        updateCards();
       });
     });
+
+    // Initialize card positions on page load
+    updateCards();
   </script>
 
 </body>
