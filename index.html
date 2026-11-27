@@ -3,80 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jenna Baltazar — Web Design Portfolio</title>
+  <title>My Web Design Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="nav-container">
-      <a href="#" class="logo">Jenna Baltazar</a>
-      <nav>
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>Hi, I'm Jenna</h1>
+    <p>Aspiring Web Designer building clean, responsive websites with HTML & CSS.</p>
+    <a href="#projects" class="hero-btn">Explore My Projects</a>
   </header>
 
-   <section id="work" class="section">
-    <h2 class="section-title">Selected Projects</h2>
-    <div class="grid" id="project-carousel" aria-label="Selected projects">
-      <div class="card" tabindex="0" role="button" aria-label="Show next project: My Resume">
-        <div class="card-thumb">Project Preview 1</div>
-        <div class="card-body">
-          <h3>My Resume</h3>
-@@ -35,7 +35,7 @@ <h3>My Resume</h3>
-        </div>
-      </div>
+  <!-- 3D Carousel Projects Section -->
+  <section id="projects" class="projects-section">
+    <h2>Featured Projects</h2>
+    <p class="subtitle">Hover over any card to pause and view the live project</p>
 
-      <div class="card" tabindex="0" role="button" aria-label="Show next project: Personal Blog Layout">
-        <div class="card-thumb">Project Preview 2</div>
-        <div class="card-body">
-          <h3>Personal Blog Layout</h3>
- <h3>Personal Blog Layout</h3>
-        </div>
-      </div>
+    <div class="carousel-scene">
+      <!-- Change --total to match your exact number of project cards -->
+      <div class="carousel-spinner" style="--total: 5;">
 
-      <div class="card" tabindex="0" role="button" aria-label="Show next project: Service Business Website">
-        <div class="card-thumb">Project Preview 3</div>
-        <div class="card-body">
-          <h3>Service Business Website</h3>
-@@ -53,10 +53,6 @@ <h3>Service Business Website</h3>
+        <div class="project-card" style="--i: 1;">
+          <img src="images/project1.png" alt="Personal Portfolio Screenshot">
+          <div class="card-content">
+            <h3>Personal Portfolio</h3>
+            <p>Responsive portfolio website hosted live on GitHub Pages.</p>
+            <div class="card-links">
+              <a href="https://github.io" target="_blank" class="btn primary">Live Demo</a>
+              <a href="https://github.com" target="_blank" class="btn secondary">Code</a>
+            </div>
+          </div>
         </div>
+
+        <div class="project-card" style="--i: 2;">
+          <img src="images/project2.png" alt="Landing Page Screenshot">
+          <div class="card-content">
+            <h3>Product Landing Page</h3>
+            <p>Modern hero section, call-to-action buttons, and Flexbox layout.</p>
+            <div class="card-links">
+              <a href="#" target="_blank" class="btn primary">Live Demo</a>
+              <a href="#" target="_blank" class="btn secondary">Code</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" style="--i: 3;">
+          <img src="images/project3.png" alt="CSS Markers Screenshot">
+          <div class="card-content">
+            <h3>CSS Color Markers</h3>
+            <p>Practice project using linear gradients, shadows, and RGB colors.</p>
+            <div class="card-links">
+              <a href="#" target="_blank" class="btn primary">Live Demo</a>
+              <a href="#" target="_blank" class="btn secondary">Code</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" style="--i: 4;">
+          <img src="images/project4.png" alt="Photo Gallery Screenshot">
+          <div class="card-content">
+            <h3>Photo Gallery</h3>
+            <p>Responsive Flexbox image grid that adapts to any screen size.</p>
+            <div class="card-links">
+              <a href="#" target="_blank" class="btn primary">Live Demo</a>
+              <a href="#" target="_blank" class="btn secondary">Code</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" style="--i: 5;">
+          <img src="images/project5.png" alt="Survey Form Screenshot">
+          <div class="card-content">
+            <h3>Registration Form</h3>
+            <p>Clean, accessible HTML form with custom input styling.</p>
+            <div class="card-links">
+              <a href="#" target="_blank" class="btn primary">Live Demo</a>
+              <a href="#" target="_blank" class="btn secondary">Code</a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <section id="about" class="section">
-@@ -85,17 +81,32 @@ <h2 class="section-title">Get In Touch</h2>
   <footer>
-    © 2026 Jenna Baltazar. Built and hosted on GitHub Pages.
+    <p>Built with HTML & CSS • Hosted on GitHub Pages</p>
   </footer>
 
-  <script>
-    const carousel = document.getElementById("project-carousel");
-    const cards = [...carousel.querySelectorAll(".card")];
-    let selectedIndex = 0;
-    function showNextCard() {
-      selectedIndex = (selectedIndex + 1) % cards.length;
-      carousel.style.setProperty("--rotation", `${-selectedIndex * 120}deg`);
-    }
-
-    cards.forEach((card) => {
-      card.addEventListener("click", (event) => {
-        if (event.target.closest(".card-link")) {
-          event.preventDefault();
-        }
-        showNextCard();
-      });
-
-      card.addEventListener("keydown", (event) => {
-        if (event.key === "Enter" || event.key === " ") {
-          event.preventDefault();
-          showNextCard();
-        }
-      });
-    });
-  </script>
 </body>
 </html>
