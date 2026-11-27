@@ -12,13 +12,16 @@ html {
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: 
-    radial-gradient(circle at 50% 20%, rgba(168, 85, 247, 0.38) 0%, transparent 55%),
-    radial-gradient(circle at 85% 75%, rgba(192, 132, 252, 0.25) 0%, transparent 50%),
-    linear-gradient(135deg, #130b2e 0%, #3b0764 50%, #1e1b4b 100%);
-  background-attachment: fixed;
+    radial-gradient(circle at 50% 12%, rgba(192, 132, 252, 0.55) 0%, transparent 35%),
+    radial-gradient(circle at 20% 45%, rgba(168, 85, 247, 0.45) 0%, transparent 40%),
+    radial-gradient(circle at 80% 75%, rgba(216, 180, 254, 0.4) 0%, transparent 40%),
+    radial-gradient(circle at 50% 95%, rgba(168, 85, 247, 0.45) 0%, transparent 35%),
+    linear-gradient(180deg, #160c36 0%, #3b0764 40%, #2e1065 75%, #130b2e 100%);
+  background-attachment: scroll;
   color: #f8fafc;
   overflow-x: hidden;
   line-height: 1.6;
+}
 
 /* Top Navigation Bar */
 .navbar {
